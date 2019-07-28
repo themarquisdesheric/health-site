@@ -17,15 +17,11 @@ const BlogTemplate = ({
 );
 
 BlogTemplate.defaultProps = {
-  data: {
-    markdownRemark: {
-      frontmatter: {
-        title: '',
-        date: ''
-      },
-      html: ''
-    }
-  }
+  frontmatter: {
+    title: '',
+    date: ''
+  },
+  html: ''
 };
 
 export default BlogTemplate;
