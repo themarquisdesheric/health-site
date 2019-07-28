@@ -1,8 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-const BlogTemplate = ({
-  data: { markdownRemark: { frontmatter, html } }
+export default ({
+  data: { 
+    markdownRemark: { 
+      frontmatter = {}, 
+      html = {}
+    } = {} 
+  } = {}
 }) =>  (
   <div className="blog-post-container">
     <div className="blog-post">
@@ -15,16 +20,6 @@ const BlogTemplate = ({
     </div>
   </div>
 );
-
-BlogTemplate.defaultProps = {
-  frontmatter: {
-    title: '',
-    date: ''
-  },
-  html: ''
-};
-
-export default BlogTemplate;
 
 export const pageQuery = graphql`
   query($path: String!) {
